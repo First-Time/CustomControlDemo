@@ -9,8 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".line.CircleActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".pathtext02.quad.QuadPathActivity"></activity>
+        <activity android:name=".pathtext02.arc.ArcPathActivity" />
+        <activity android:name=".pathtext02.oval.OvalPathActivity" />
+        <activity android:name=".pathtext02.circle.CirclePathActivity" />
+        <activity android:name=".pathtext02.roundrect.RoundRectPathActivity" />
+        <activity android:name=".pathtext02.rect.RectPathActivity" />
+        <activity android:name=".pathtext02.line.LinePathActivity" />
+        <activity android:name=".draw01.arc.ArcActivity" />
+        <activity android:name=".draw01.oval.OvalActivity" />
+        <activity android:name=".draw01.rect.RectActivity" />
+        <activity android:name=".draw01.point.PointActivity" />
+        <activity android:name=".draw01.line.LineActivity" />
+        <activity android:name=".draw01.circle.CircleActivity" />
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

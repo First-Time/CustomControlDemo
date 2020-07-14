@@ -1,4 +1,4 @@
-package com.lyf.customcontrol.line
+package com.lyf.customcontrol.draw01.circle
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +11,6 @@ class CircleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_circle)
 
-        root.addView(MyView(this))
+        root.addView(MyCircleView(this))
     }
 }
