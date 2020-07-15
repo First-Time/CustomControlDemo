@@ -4,6 +4,6 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".draw01.point.PointActivity">
+    tools:context=".part2.draw01.point.PointActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

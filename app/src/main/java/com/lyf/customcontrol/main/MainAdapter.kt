@@ -8,19 +8,26 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
-import com.lyf.customcontrol.draw01.arc.ArcActivity
-import com.lyf.customcontrol.draw01.circle.CircleActivity
-import com.lyf.customcontrol.draw01.line.LineActivity
-import com.lyf.customcontrol.draw01.oval.OvalActivity
-import com.lyf.customcontrol.draw01.point.PointActivity
-import com.lyf.customcontrol.draw01.rect.RectActivity
-import com.lyf.customcontrol.pathtext02.arc.ArcPathActivity
-import com.lyf.customcontrol.pathtext02.circle.CirclePathActivity
-import com.lyf.customcontrol.pathtext02.line.LinePathActivity
-import com.lyf.customcontrol.pathtext02.oval.OvalPathActivity
-import com.lyf.customcontrol.pathtext02.quad.QuadPathActivity
-import com.lyf.customcontrol.pathtext02.rect.RectPathActivity
-import com.lyf.customcontrol.pathtext02.roundrect.RoundRectPathActivity
+import com.lyf.customcontrol.part2.draw01.arc.ArcActivity
+import com.lyf.customcontrol.part2.draw01.circle.CircleActivity
+import com.lyf.customcontrol.part2.draw01.line.LineActivity
+import com.lyf.customcontrol.part2.draw01.oval.OvalActivity
+import com.lyf.customcontrol.part2.draw01.point.PointActivity
+import com.lyf.customcontrol.part2.draw01.rect.RectActivity
+import com.lyf.customcontrol.part2.pathtext02.path.arc.ArcPathActivity
+import com.lyf.customcontrol.part2.pathtext02.path.circle.CirclePathActivity
+import com.lyf.customcontrol.part2.pathtext02.path.line.LinePathActivity
+import com.lyf.customcontrol.part2.pathtext02.path.oval.OvalPathActivity
+import com.lyf.customcontrol.part2.pathtext02.path.quad.QuadPathActivity
+import com.lyf.customcontrol.part2.pathtext02.path.rect.RectPathActivity
+import com.lyf.customcontrol.part2.pathtext02.path.roundrect.RoundRectPathActivity
+import com.lyf.customcontrol.part2.pathtext02.text.example01.TextExample01Activity
+import com.lyf.customcontrol.part2.pathtext02.text.example02.TextExample02Activity
+import com.lyf.customcontrol.part2.pathtext02.text.example03.TextExample03Activity
+import com.lyf.customcontrol.part2.pathtext02.text.path.TextPathActivity
+import com.lyf.customcontrol.part2.pathtext02.text.pos.TextPosActivity
+import com.lyf.customcontrol.part2.pathtext02.text.typeface.custom.TextTypefaceCustomActivity
+import com.lyf.customcontrol.part2.pathtext02.text.typeface.system.TextTypefaceSystemActivity
 
 class MainAdapter(private var activities: ArrayList<String>) :
     RecyclerView.Adapter<MainAdapter.JumpViewHolder>() {
@@ -144,6 +151,62 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             QuadPathActivity::class.java
+                        )
+                    )
+                }
+                13 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextExample01Activity::class.java
+                        )
+                    )
+                }
+                14 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextExample02Activity::class.java
+                        )
+                    )
+                }
+                15 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextExample03Activity::class.java
+                        )
+                    )
+                }
+                16 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextPosActivity::class.java
+                        )
+                    )
+                }
+                17 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextPathActivity::class.java
+                        )
+                    )
+                }
+                18 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextTypefaceSystemActivity::class.java
+                        )
+                    )
+                }
+                19 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TextTypefaceCustomActivity::class.java
                         )
                     )
                 }

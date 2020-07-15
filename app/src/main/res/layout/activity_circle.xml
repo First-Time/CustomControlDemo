@@ -5,6 +5,6 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".draw01.circle.CircleActivity">
+    tools:context=".part2.draw01.circle.CircleActivity">
 
 </FrameLayout>

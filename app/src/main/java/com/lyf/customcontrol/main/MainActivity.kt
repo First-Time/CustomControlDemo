@@ -32,7 +32,14 @@ class MainActivity : AppCompatActivity() {
             "跳转CirclePathActivity",
             "跳转OvalPathActivity",
             "跳转ArcPathActivity",
-            "跳转QuadPathActivity"
+            "跳转QuadPathActivity",
+            "跳转TextExample01Activity",
+            "跳转TextExample02Activity",
+            "跳转TextExample03Activity",
+            "跳转TextPosActivity",
+            "跳转TextPathActivity",
+            "跳转TextTypefaceSystemActivity",
+            "跳转TextTypefaceCustomActivity"
         )
 
         myAdapter = MainAdapter(itemList)

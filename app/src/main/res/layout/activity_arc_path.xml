@@ -4,6 +4,6 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pathtext02.arc.ArcPathActivity">
+    tools:context=".part2.pathtext02.path.arc.ArcPathActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
