@@ -28,6 +28,9 @@ import com.lyf.customcontrol.part2.pathtext02.text.path.TextPathActivity
 import com.lyf.customcontrol.part2.pathtext02.text.pos.TextPosActivity
 import com.lyf.customcontrol.part2.pathtext02.text.typeface.custom.TextTypefaceCustomActivity
 import com.lyf.customcontrol.part2.pathtext02.text.typeface.system.TextTypefaceSystemActivity
+import com.lyf.customcontrol.part2.region03.construct.RegionConstructActivity
+import com.lyf.customcontrol.part2.region03.op.RegionOpActivity
+import com.lyf.customcontrol.part2.region03.setpath.RegionSetPathActivity
 
 class MainAdapter(private var activities: ArrayList<String>) :
     RecyclerView.Adapter<MainAdapter.JumpViewHolder>() {
@@ -207,6 +210,30 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             TextTypefaceCustomActivity::class.java
+                        )
+                    )
+                }
+                20 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RegionConstructActivity::class.java
+                        )
+                    )
+                }
+                21 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RegionSetPathActivity::class.java
+                        )
+                    )
+                }
+                22 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RegionOpActivity::class.java
                         )
                     )
                 }
