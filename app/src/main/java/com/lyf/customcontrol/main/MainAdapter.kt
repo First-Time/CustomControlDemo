@@ -31,6 +31,12 @@ import com.lyf.customcontrol.part2.pathtext02.text.typeface.system.TextTypefaceS
 import com.lyf.customcontrol.part2.region03.construct.RegionConstructActivity
 import com.lyf.customcontrol.part2.region03.op.RegionOpActivity
 import com.lyf.customcontrol.part2.region03.setpath.RegionSetPathActivity
+import com.lyf.customcontrol.part2.region04.clip.ClipActivity
+import com.lyf.customcontrol.part2.region04.rotate.RotateActivity
+import com.lyf.customcontrol.part2.region04.saverestore.SaveRestoreActivity
+import com.lyf.customcontrol.part2.region04.scale.ScaleActivity
+import com.lyf.customcontrol.part2.region04.skew.SkewActivity
+import com.lyf.customcontrol.part2.region04.translate.TranslateActivity
 
 class MainAdapter(private var activities: ArrayList<String>) :
     RecyclerView.Adapter<MainAdapter.JumpViewHolder>() {
@@ -234,6 +240,54 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             RegionOpActivity::class.java
+                        )
+                    )
+                }
+                23 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TranslateActivity::class.java
+                        )
+                    )
+                }
+                24 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RotateActivity::class.java
+                        )
+                    )
+                }
+                25 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ScaleActivity::class.java
+                        )
+                    )
+                }
+                26 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ClipActivity::class.java
+                        )
+                    )
+                }
+                27 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            SkewActivity::class.java
+                        )
+                    )
+                }
+                28 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            SaveRestoreActivity::class.java
                         )
                     )
                 }

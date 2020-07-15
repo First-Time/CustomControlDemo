@@ -42,7 +42,13 @@ class MainActivity : AppCompatActivity() {
             "跳转TextTypefaceCustomActivity",
             "跳转RegionConstructActivity",
             "跳转RegionSetPathActivity",
-            "跳转RegionOpActivity"
+            "跳转RegionOpActivity",
+            "跳转TranslateActivity",
+            "跳转RotateActivity",
+            "跳转ScaleActivity",
+            "跳转ClipActivity",
+            "跳转SkewActivity",
+            "跳转SaveRestoreActivity"
         )
 
         myAdapter = MainAdapter(itemList)
