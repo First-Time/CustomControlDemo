@@ -14,6 +14,11 @@ import com.lyf.customcontrol.part2.draw01.line.LineActivity
 import com.lyf.customcontrol.part2.draw01.oval.OvalActivity
 import com.lyf.customcontrol.part2.draw01.point.PointActivity
 import com.lyf.customcontrol.part2.draw01.rect.RectActivity
+import com.lyf.customcontrol.part2.pathquadto06.gesture.lineto.GestureLineToActivity
+import com.lyf.customcontrol.part2.pathquadto06.gesture.quadto.GestureQuadToActivity
+import com.lyf.customcontrol.part2.pathquadto06.quadratic.QuadraticActivity
+import com.lyf.customcontrol.part2.pathquadto06.rquadto.RQuadraticActivity
+import com.lyf.customcontrol.part2.pathquadto06.wave.WaveActivity
 import com.lyf.customcontrol.part2.pathtext02.path.arc.ArcPathActivity
 import com.lyf.customcontrol.part2.pathtext02.path.circle.CirclePathActivity
 import com.lyf.customcontrol.part2.pathtext02.path.line.LinePathActivity
@@ -37,6 +42,11 @@ import com.lyf.customcontrol.part2.region04.saverestore.SaveRestoreActivity
 import com.lyf.customcontrol.part2.region04.scale.ScaleActivity
 import com.lyf.customcontrol.part2.region04.skew.SkewActivity
 import com.lyf.customcontrol.part2.region04.translate.TranslateActivity
+import com.lyf.customcontrol.part2.text05.fixedpointwrite.center.MyCenterActivity
+import com.lyf.customcontrol.part2.text05.fixedpointwrite.top.MyTopTextActivity
+import com.lyf.customcontrol.part2.text05.fontmetrics.FontMetricsActivity
+import com.lyf.customcontrol.part2.text05.fourlineandbase.BlogDrawActivity
+import com.lyf.customcontrol.part2.text05.widthheightrect.WidthHeightActivity
 
 class MainAdapter(private var activities: ArrayList<String>) :
     RecyclerView.Adapter<MainAdapter.JumpViewHolder>() {
@@ -288,6 +298,86 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             SaveRestoreActivity::class.java
+                        )
+                    )
+                }
+                29 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            BlogDrawActivity::class.java
+                        )
+                    )
+                }
+                30 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            FontMetricsActivity::class.java
+                        )
+                    )
+                }
+                31 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            WidthHeightActivity::class.java
+                        )
+                    )
+                }
+                32 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MyTopTextActivity::class.java
+                        )
+                    )
+                }
+                33 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MyCenterActivity::class.java
+                        )
+                    )
+                }
+                34 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            QuadraticActivity::class.java
+                        )
+                    )
+                }
+                35 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            GestureLineToActivity::class.java
+                        )
+                    )
+                }
+                36 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            GestureQuadToActivity::class.java
+                        )
+                    )
+                }
+                37 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RQuadraticActivity::class.java
+                        )
+                    )
+                }
+                38 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            WaveActivity::class.java
                         )
                     )
                 }

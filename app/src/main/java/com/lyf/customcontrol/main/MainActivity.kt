@@ -48,7 +48,17 @@ class MainActivity : AppCompatActivity() {
             "ScaleActivity",
             "ClipActivity",
             "SkewActivity",
-            "SaveRestoreActivity"
+            "SaveRestoreActivity",
+            "BlogDrawActivity",
+            "FontMetricsActivity",
+            "WidthHeightActivity",
+            "MyTopActivity",
+            "MyCenterActivity",
+            "QuadraticActivity",
+            "GestureLineToActivity",
+            "GestureQuadToActivity",
+            "RQuadraticActivity",
+            "WaveActivity"
         )
 
         myAdapter = MainAdapter(itemList)
