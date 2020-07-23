@@ -58,7 +58,14 @@ class MainActivity : AppCompatActivity() {
             "GestureLineToActivity",
             "GestureQuadToActivity",
             "RQuadraticActivity",
-            "WaveActivity"
+            "WaveActivity",
+            "StrokeCapActivity",
+            "StrokeJoinActivity",
+            "CornerPathActivity",
+            "DashPathActivity",
+            "DiscretePathActivity",
+            "PathDashPathActivity",
+            "ComposeSumPathActivity"
         )
 
         myAdapter = MainAdapter(itemList)
@@ -86,5 +93,6 @@ class MainActivity : AppCompatActivity() {
 
 
         recyclerView.adapter = myAdapter
+
     }
 }

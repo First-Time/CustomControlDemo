@@ -14,6 +14,13 @@ import com.lyf.customcontrol.part2.draw01.line.LineActivity
 import com.lyf.customcontrol.part2.draw01.oval.OvalActivity
 import com.lyf.customcontrol.part2.draw01.point.PointActivity
 import com.lyf.customcontrol.part2.draw01.rect.RectActivity
+import com.lyf.customcontrol.part2.paint07.patheffect.composesumpath.ComposeSumPathActivity
+import com.lyf.customcontrol.part2.paint07.patheffect.cornerpath.CornerPathActivity
+import com.lyf.customcontrol.part2.paint07.patheffect.dashpath.DashPathActivity
+import com.lyf.customcontrol.part2.paint07.patheffect.discretepath.DiscretePathActivity
+import com.lyf.customcontrol.part2.paint07.patheffect.pathdashpath.PathDashPathActivity
+import com.lyf.customcontrol.part2.paint07.strokecap.StrokeCapActivity
+import com.lyf.customcontrol.part2.paint07.strokejoin.StrokeJoinActivity
 import com.lyf.customcontrol.part2.pathquadto06.gesture.lineto.GestureLineToActivity
 import com.lyf.customcontrol.part2.pathquadto06.gesture.quadto.GestureQuadToActivity
 import com.lyf.customcontrol.part2.pathquadto06.quadratic.QuadraticActivity
@@ -378,6 +385,62 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             WaveActivity::class.java
+                        )
+                    )
+                }
+                39 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            StrokeCapActivity::class.java
+                        )
+                    )
+                }
+                40 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            StrokeJoinActivity::class.java
+                        )
+                    )
+                }
+                41 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            CornerPathActivity::class.java
+                        )
+                    )
+                }
+                42 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            DashPathActivity::class.java
+                        )
+                    )
+                }
+                43 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            DiscretePathActivity::class.java
+                        )
+                    )
+                }
+                44 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PathDashPathActivity::class.java
+                        )
+                    )
+                }
+                45 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ComposeSumPathActivity::class.java
                         )
                     )
                 }

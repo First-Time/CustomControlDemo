@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part2.pathquadto06.wave.WaveActivity"></activity>
+        <activity android:name=".part2.paint07.patheffect.composesumpath.ComposeSumPathActivity"></activity>
+        <activity android:name=".part2.paint07.patheffect.discretepath.DiscretePathActivity" />
+        <activity android:name=".part2.paint07.patheffect.pathdashpath.PathDashPathActivity" />
+        <activity android:name=".part2.paint07.patheffect.sumpath.SumPathActivity" />
+        <activity android:name=".part2.paint07.patheffect.dashpath.DashPathActivity" />
+        <activity android:name=".part2.paint07.patheffect.cornerpath.CornerPathActivity" />
+        <activity android:name=".part2.paint07.strokejoin.StrokeJoinActivity" />
+        <activity android:name=".part2.paint07.strokecap.StrokeCapActivity" />
+        <activity android:name=".part2.pathquadto06.wave.WaveActivity" />
         <activity android:name=".part2.pathquadto06.rquadto.RQuadraticActivity" />
         <activity android:name=".part2.pathquadto06.gesture.quadto.GestureQuadToActivity" />
         <activity android:name=".part2.pathquadto06.gesture.lineto.GestureLineToActivity" />
