@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".part2.paint07.patheffect.sumpath.SumPathActivity">
+    tools:context=".part2.colormatrix08.singlechannel.SingleChannelActivity">
 
-    <com.lyf.customcontrol.part2.paint07.patheffect.sumpath.MySumPathView
+    <com.lyf.customcontrol.part2.colormatrix08.singlechannel.MySingleChannelView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -8,6 +8,21 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
+import com.lyf.customcontrol.part2.colorfilter09.colormatrix.ColorMatrixActivity
+import com.lyf.customcontrol.part2.colorfilter09.lighting.LightingActivity
+import com.lyf.customcontrol.part2.colorfilter09.porterduff.PorterDuffActivity
+import com.lyf.customcontrol.part2.colormatrix08.multichannel.MultiChannelActivity
+import com.lyf.customcontrol.part2.colormatrix08.officialfunction.saturation.SaturationActivity
+import com.lyf.customcontrol.part2.colormatrix08.projection.blackwhite.BlackWhiteActivity
+import com.lyf.customcontrol.part2.colormatrix08.projection.inverse.InverseActivity
+import com.lyf.customcontrol.part2.colormatrix08.projection.old.OldActivity
+import com.lyf.customcontrol.part2.colormatrix08.reverse.ReverseChannelActivity
+import com.lyf.customcontrol.part2.colormatrix08.rotate.blue.RotateBlueActivity
+import com.lyf.customcontrol.part2.colormatrix08.rotate.green.RotateGreenActivity
+import com.lyf.customcontrol.part2.colormatrix08.rotate.red.RotateRedActivity
+import com.lyf.customcontrol.part2.colormatrix08.scale.ScaleChannelActivity
+import com.lyf.customcontrol.part2.colormatrix08.singlechannel.SingleChannelActivity
+import com.lyf.customcontrol.part2.colormatrix08.translate.TranslateChannelActivity
 import com.lyf.customcontrol.part2.draw01.arc.ArcActivity
 import com.lyf.customcontrol.part2.draw01.circle.CircleActivity
 import com.lyf.customcontrol.part2.draw01.line.LineActivity
@@ -49,6 +64,7 @@ import com.lyf.customcontrol.part2.region04.saverestore.SaveRestoreActivity
 import com.lyf.customcontrol.part2.region04.scale.ScaleActivity
 import com.lyf.customcontrol.part2.region04.skew.SkewActivity
 import com.lyf.customcontrol.part2.region04.translate.TranslateActivity
+import com.lyf.customcontrol.part2.setxfermode10.porterduffxfermode.PorterDuffXfermodeActivity
 import com.lyf.customcontrol.part2.text05.fixedpointwrite.center.MyCenterActivity
 import com.lyf.customcontrol.part2.text05.fixedpointwrite.top.MyTopTextActivity
 import com.lyf.customcontrol.part2.text05.fontmetrics.FontMetricsActivity
@@ -441,6 +457,150 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             ComposeSumPathActivity::class.java
+                        )
+                    )
+                }
+                46 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            SingleChannelActivity::class.java
+                        )
+                    )
+                }
+                47 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MultiChannelActivity::class.java
+                        )
+                    )
+                }
+                48 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TranslateChannelActivity::class.java
+                        )
+                    )
+                }
+                49 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ReverseChannelActivity::class.java
+                        )
+                    )
+                }
+                50 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ScaleChannelActivity::class.java
+                        )
+                    )
+                }
+                51 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RotateRedActivity::class.java
+                        )
+                    )
+                }
+                52 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RotateGreenActivity::class.java
+                        )
+                    )
+                }
+                53 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RotateBlueActivity::class.java
+                        )
+                    )
+                }
+                54 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            BlackWhiteActivity::class.java
+                        )
+                    )
+                }
+                55 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            InverseActivity::class.java
+                        )
+                    )
+                }
+                56 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            OldActivity::class.java
+                        )
+                    )
+                }
+                57 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            SaturationActivity::class.java
+                        )
+                    )
+                }
+                58 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            com.lyf.customcontrol.part2.colormatrix08.officialfunction.scale.ScaleActivity::class.java
+                        )
+                    )
+                }
+                59 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            com.lyf.customcontrol.part2.colormatrix08.officialfunction.rotate.RotateActivity::class.java
+                        )
+                    )
+                }
+                60 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ColorMatrixActivity::class.java
+                        )
+                    )
+                }
+                61 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            LightingActivity::class.java
+                        )
+                    )
+                }
+                62 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PorterDuffActivity::class.java
+                        )
+                    )
+                }
+                63 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PorterDuffXfermodeActivity::class.java
                         )
                     )
                 }

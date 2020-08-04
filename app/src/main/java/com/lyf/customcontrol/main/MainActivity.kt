@@ -65,7 +65,25 @@ class MainActivity : AppCompatActivity() {
             "DashPathActivity",
             "DiscretePathActivity",
             "PathDashPathActivity",
-            "ComposeSumPathActivity"
+            "ComposeSumPathActivity",
+            "SingleChannelActivity",
+            "MultiChannelActivity",
+            "TranslateChannelActivity",
+            "ReverseChannelActivity",
+            "ScaleChannelActivity",
+            "RotateRedActivity",
+            "RotateGreenActivity",
+            "RotateBlueActivity",
+            "BlackWhiteActivity",
+            "InverseActivity",
+            "OldActivity",
+            "SaturationActivity",
+            "ScaleActivity",
+            "RotateActivity",
+            "ColorMatrixActivity",
+            "LightingActivity",
+            "MultiplyActivity",
+            "PorterDuffXfermodeActivity"
         )
 
         myAdapter = MainAdapter(itemList)
