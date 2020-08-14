@@ -64,7 +64,18 @@ import com.lyf.customcontrol.part2.region04.saverestore.SaveRestoreActivity
 import com.lyf.customcontrol.part2.region04.scale.ScaleActivity
 import com.lyf.customcontrol.part2.region04.skew.SkewActivity
 import com.lyf.customcontrol.part2.region04.translate.TranslateActivity
-import com.lyf.customcontrol.part2.setxfermode10.porterduffxfermode.PorterDuffXfermodeActivity
+import com.lyf.customcontrol.part2.setxfermode10.PorterDuffXfermodeActivity
+import com.lyf.customcontrol.part2.setxfermode10.PorterDuffXfermodeActivity2
+import com.lyf.customcontrol.part2.setxfermode11.srcin.invertedimage.InvertedImageActivity
+import com.lyf.customcontrol.part2.setxfermode11.srcin.roundcorner.RoundCornerActivity
+import com.lyf.customcontrol.part2.setxfermode11.srcout.eraser.EraserActivity
+import com.lyf.customcontrol.part2.setxfermode11.srcout.scratchcard.ScratchCardActivity
+import com.lyf.customcontrol.part2.setxfermode11.twitter.TwitterActivity
+import com.lyf.customcontrol.part2.setxfermode12.dstin.circlewave.CircleWaveActivity
+import com.lyf.customcontrol.part2.setxfermode12.dstin.heartmap.HeartMapActivity
+import com.lyf.customcontrol.part2.setxfermode12.dstin.invertedimage.MyInvertedImageActivity
+import com.lyf.customcontrol.part2.setxfermode12.dstin.irregularitywave.IrregularityWaveActivity
+import com.lyf.customcontrol.part2.setxfermode12.dstin.roundcorner.MyRoundCornerActivity
 import com.lyf.customcontrol.part2.text05.fixedpointwrite.center.MyCenterActivity
 import com.lyf.customcontrol.part2.text05.fixedpointwrite.top.MyTopTextActivity
 import com.lyf.customcontrol.part2.text05.fontmetrics.FontMetricsActivity
@@ -601,6 +612,94 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             PorterDuffXfermodeActivity::class.java
+                        )
+                    )
+                }
+                64 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PorterDuffXfermodeActivity2::class.java
+                        )
+                    )
+                }
+                65 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TwitterActivity::class.java
+                        )
+                    )
+                }
+                66 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RoundCornerActivity::class.java
+                        )
+                    )
+                }
+                67 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            InvertedImageActivity::class.java
+                        )
+                    )
+                }
+                68 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            EraserActivity::class.java
+                        )
+                    )
+                }
+                69 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ScratchCardActivity::class.java
+                        )
+                    )
+                }
+                70 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MyRoundCornerActivity::class.java
+                        )
+                    )
+                }
+                71 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MyInvertedImageActivity::class.java
+                        )
+                    )
+                }
+                72 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            CircleWaveActivity::class.java
+                        )
+                    )
+                }
+                73 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            HeartMapActivity::class.java
+                        )
+                    )
+                }
+                74 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            IrregularityWaveActivity::class.java
                         )
                     )
                 }

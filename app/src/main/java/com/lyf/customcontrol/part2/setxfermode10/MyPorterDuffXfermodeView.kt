@@ -1,4 +1,4 @@
-package com.lyf.customcontrol.part2.setxfermode10.porterduffxfermode
+package com.lyf.customcontrol.part2.setxfermode10
 
 import android.content.Context
 import android.graphics.*
@@ -15,26 +15,39 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
     constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context?) : this(context, null)
 
+    private var layerId = 0
     private val paint = Paint()
     private var srcBitmap: Bitmap
     private var dstBitmap: Bitmap
+    private var fontMetrics = paint.fontMetrics
+    private var textWidth = 0f
+    private var textHeight = 0f
 
     init {
-        srcBitmap = makeSrcBitmap(WIDTH, HEIGHT)
-        dstBitmap = makeDstBitmap(WIDTH, HEIGHT)
+        paint.textSize = 40f
+        srcBitmap = makeSrcBitmap(
+            WIDTH,
+            HEIGHT
+        )
+        dstBitmap = makeDstBitmap(
+            WIDTH,
+            HEIGHT
+        )
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
         //region CLEAR
-        var layerId: Int =
-            canvas?.saveLayer(0f, 0f, WIDTH * 2, HEIGHT * 2, paint, Canvas.ALL_SAVE_FLAG)!!
-
+        layerId = canvas?.saveLayer(0f, 0f, WIDTH * 2, HEIGHT * 2, paint, Canvas.ALL_SAVE_FLAG)!!
         canvas?.drawBitmap(dstBitmap, 0f, 0f, paint)
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("CLEAR")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("CLEAR", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -48,6 +61,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("SRC")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("SRC", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -59,6 +76,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("DST")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("DST", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -72,6 +93,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("SRC_OVER")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("SRC_OVER", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -83,6 +108,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_OVER)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("DST_OVER")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("DST_OVER", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -96,6 +125,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("SRC_IN")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("SRC_IN", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -107,6 +140,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_IN)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("DST_IN")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("DST_IN", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -120,6 +157,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("SRC_OUT")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("SRC_OUT", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -131,6 +172,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_OUT)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("DST_OUT")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("DST_OUT", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -144,6 +189,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("SRC_ATOP")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("SRC_ATOP", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -155,6 +204,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_ATOP)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("DST_ATOP")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("DST_ATOP", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -168,6 +221,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("XOR")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("XOR", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -179,6 +236,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.ADD)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("ADD")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("ADD", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -192,6 +253,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("MULTIPLY")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("MULTIPLY", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -203,6 +268,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SCREEN)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("SCREEN")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("SCREEN", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion
@@ -216,6 +285,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("OVERLAY")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("OVERLAY", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -228,6 +301,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
 
+        textWidth = paint.measureText("DARKEN")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("DARKEN", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
+
         canvas?.restoreToCount(layerId)
         //endregion
 
@@ -239,6 +316,10 @@ class MyPorterDuffXfermodeView(context: Context?, attrs: AttributeSet?, defStyle
         paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.LIGHTEN)
         canvas?.drawBitmap(srcBitmap, 0f, 0f, paint)
         paint.xfermode = null
+
+        textWidth = paint.measureText("LIGHTEN")
+        textHeight = fontMetrics.bottom - fontMetrics.top
+        canvas?.drawText("LIGHTEN", (WIDTH - textWidth) / 2, HEIGHT / 2, paint)
 
         canvas?.restoreToCount(layerId)
         //endregion

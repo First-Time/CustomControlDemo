@@ -83,7 +83,18 @@ class MainActivity : AppCompatActivity() {
             "ColorMatrixActivity",
             "LightingActivity",
             "MultiplyActivity",
-            "PorterDuffXfermodeActivity"
+            "PorterDuffXfermodeActivity",
+            "PorterDuffXfermodeActivity2",
+            "TwitterActivity",
+            "RoundCornerActivity",
+            "InvertedImageActivity",
+            "EraserActivity",
+            "ScratchCardActivity",
+            "MyRoundCornerActivity",
+            "MyInvertedImageActivity",
+            "CircleWaveActivity",
+            "HeartMapActivity",
+            "IrregularityWaveActivity"
         )
 
         myAdapter = MainAdapter(itemList)

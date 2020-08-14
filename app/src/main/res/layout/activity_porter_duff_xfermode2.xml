@@ -10,9 +10,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="5400px"
-        tools:context=".part2.setxfermode10.PorterDuffXfermodeActivity">
+        tools:context=".part2.setxfermode10.PorterDuffXfermodeActivity2">
 
-        <com.lyf.customcontrol.part2.setxfermode10.MyPorterDuffXfermodeView
+        <com.lyf.customcontrol.part2.setxfermode10.MyPorterDuffXfermodeView2
             android:layout_width="match_parent"
             android:layout_height="5400px"
             app:layout_constraintTop_toTopOf="parent" />

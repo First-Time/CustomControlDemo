@@ -16,7 +16,7 @@ class MyWaveView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
     val path = Path()
     val paint = Paint()
     private val mItemWaveLength = 1000f
-    var dx = 0f
+    private var dx = 0f
     private var originY = 300f
 
     init {
