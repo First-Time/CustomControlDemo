@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
+import com.lyf.customcontrol.part2.canvas13.ondraw.BitmapCanvasActivity
 import com.lyf.customcontrol.part2.colorfilter09.colormatrix.ColorMatrixActivity
 import com.lyf.customcontrol.part2.colorfilter09.lighting.LightingActivity
 import com.lyf.customcontrol.part2.colorfilter09.porterduff.PorterDuffActivity
@@ -700,6 +701,14 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             IrregularityWaveActivity::class.java
+                        )
+                    )
+                }
+                75 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            BitmapCanvasActivity::class.java
                         )
                     )
                 }

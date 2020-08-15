@@ -27,27 +27,32 @@ class MySaveRestoreView(context: Context?) : View(context) {
         canvas?.drawColor(Color.RED)
 
         //保存当前画布大小，即整屏
-        canvas?.save()
+        val saveId1 = canvas?.save()!!
 
         canvas?.clipRect(Rect(100, 100, 800, 800))
         canvas?.drawColor(Color.GREEN)
-        canvas?.save()
+        val saveId2 = canvas?.save()!!
 
         canvas?.clipRect(Rect(200, 200, 700, 700))
         canvas?.drawColor(Color.BLUE)
-        canvas?.save()
+        val saveId3 = canvas?.save()!!
 
         canvas?.clipRect(Rect(300, 300, 600, 600))
         canvas?.drawColor(Color.BLACK)
-        canvas?.save()
+        val saveId4 = canvas?.save()!!
 
         canvas?.clipRect(Rect(400, 400, 500, 500))
         canvas?.drawColor(Color.WHITE)
 
         //将栈顶的画布状态取出来，作为当前画布，并画成黄色背景
-        canvas?.restore()
-        canvas?.restore()
-        canvas?.restore()
+        canvas?.restoreToCount(saveId3)
+        canvas?.restoreToCount(saveId3)
+        canvas?.restoreToCount(saveId3)
+        canvas?.restoreToCount(saveId3)
+//        canvas?.restore()
+//        canvas?.restore()
+//        canvas?.restore()
+//        canvas?.restore()
         canvas?.drawColor(Color.YELLOW)
     }
 }

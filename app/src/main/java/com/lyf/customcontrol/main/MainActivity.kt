@@ -94,7 +94,8 @@ class MainActivity : AppCompatActivity() {
             "MyInvertedImageActivity",
             "CircleWaveActivity",
             "HeartMapActivity",
-            "IrregularityWaveActivity"
+            "IrregularityWaveActivity",
+            "BitmapCanvasActivity"
         )
 
         myAdapter = MainAdapter(itemList)
