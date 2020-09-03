@@ -78,6 +78,9 @@ import com.lyf.customcontrol.part2.setxfermode12.dstin.heartmap.HeartMapActivity
 import com.lyf.customcontrol.part2.setxfermode12.dstin.invertedimage.MyInvertedImageActivity
 import com.lyf.customcontrol.part2.setxfermode12.dstin.irregularitywave.IrregularityWaveActivity
 import com.lyf.customcontrol.part2.setxfermode12.dstin.roundcorner.MyRoundCornerActivity
+import com.lyf.customcontrol.part2.shadowglow16.layerlist.ShadowGlowActivity
+import com.lyf.customcontrol.part2.shadowglow16.setmaskfilter.BlurMaskFilterActivity
+import com.lyf.customcontrol.part2.shadowglow16.setshadowlayer.ShadowLayerActivity
 import com.lyf.customcontrol.part2.text05.fixedpointwrite.center.MyCenterActivity
 import com.lyf.customcontrol.part2.text05.fixedpointwrite.top.MyTopTextActivity
 import com.lyf.customcontrol.part2.text05.fontmetrics.FontMetricsActivity
@@ -718,6 +721,30 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             QqRedPointActivity::class.java
+                        )
+                    )
+                }
+                77 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ShadowGlowActivity::class.java
+                        )
+                    )
+                }
+                78 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ShadowLayerActivity::class.java
+                        )
+                    )
+                }
+                79 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            BlurMaskFilterActivity::class.java
                         )
                     )
                 }

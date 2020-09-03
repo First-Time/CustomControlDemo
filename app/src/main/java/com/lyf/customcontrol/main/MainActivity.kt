@@ -96,7 +96,10 @@ class MainActivity : AppCompatActivity() {
             "HeartMapActivity",
             "IrregularityWaveActivity",
             "BitmapCanvasActivity",
-            "QqRedPointActivity"
+            "QqRedPointActivity",
+            "ShadowGlowActivity",
+            "ShadowLayerActivity",
+            "BlurMaskFilterActivity"
         )
 
         myAdapter = MainAdapter(itemList)

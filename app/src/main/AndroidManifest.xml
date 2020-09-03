@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part2.qqredpoint15.QqRedPointActivity"></activity>
+        <activity android:name=".part2.shadowglow16.setmaskfilter.BlurMaskFilterActivity"></activity>
+        <activity android:name=".part2.shadowglow16.setshadowlayer.ShadowLayerActivity" />
+        <activity android:name=".part2.shadowglow16.layerlist.ShadowGlowActivity" />
+        <activity android:name=".part2.qqredpoint15.QqRedPointActivity" />
         <activity android:name=".part2.canvas13.ondraw.BitmapCanvasActivity" />
         <activity android:name=".part2.setxfermode12.dstin.irregularitywave.IrregularityWaveActivity" />
         <activity android:name=".part2.setxfermode12.dstin.heartmap.HeartMapActivity" />
