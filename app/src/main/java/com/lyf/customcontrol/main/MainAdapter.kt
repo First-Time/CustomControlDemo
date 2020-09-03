@@ -56,6 +56,7 @@ import com.lyf.customcontrol.part2.pathtext02.text.path.TextPathActivity
 import com.lyf.customcontrol.part2.pathtext02.text.pos.TextPosActivity
 import com.lyf.customcontrol.part2.pathtext02.text.typeface.custom.TextTypefaceCustomActivity
 import com.lyf.customcontrol.part2.pathtext02.text.typeface.system.TextTypefaceSystemActivity
+import com.lyf.customcontrol.part2.qqredpoint15.QqRedPointActivity
 import com.lyf.customcontrol.part2.region03.construct.RegionConstructActivity
 import com.lyf.customcontrol.part2.region03.op.RegionOpActivity
 import com.lyf.customcontrol.part2.region03.setpath.RegionSetPathActivity
@@ -709,6 +710,14 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             BitmapCanvasActivity::class.java
+                        )
+                    )
+                }
+                76 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            QqRedPointActivity::class.java
                         )
                     )
                 }
