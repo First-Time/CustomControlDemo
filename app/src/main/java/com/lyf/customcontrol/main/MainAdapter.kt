@@ -8,6 +8,12 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
+import com.lyf.customcontrol.part2.bitmapshadow17.bitmapshadow.ExtractAlphaActivity
+import com.lyf.customcontrol.part2.bitmapshadow17.encapsulation.ShadowControlActivity
+import com.lyf.customcontrol.part2.bitmapshader18.bitmapshader.BitmapShaderActivity
+import com.lyf.customcontrol.part2.bitmapshader18.circleimage.CircleImageActivity
+import com.lyf.customcontrol.part2.bitmapshader18.encapsulation.AvatarActivity
+import com.lyf.customcontrol.part2.bitmapshader18.telescope.TelescopeActivity
 import com.lyf.customcontrol.part2.canvas13.ondraw.BitmapCanvasActivity
 import com.lyf.customcontrol.part2.colorfilter09.colormatrix.ColorMatrixActivity
 import com.lyf.customcontrol.part2.colorfilter09.lighting.LightingActivity
@@ -30,6 +36,9 @@ import com.lyf.customcontrol.part2.draw01.line.LineActivity
 import com.lyf.customcontrol.part2.draw01.oval.OvalActivity
 import com.lyf.customcontrol.part2.draw01.point.PointActivity
 import com.lyf.customcontrol.part2.draw01.rect.RectActivity
+import com.lyf.customcontrol.part2.lineargradient19.flashstring.FlashStringActivity
+import com.lyf.customcontrol.part2.lineargradient19.multiplegradient.MultipleLinearGradientActivity
+import com.lyf.customcontrol.part2.lineargradient19.twocolorgradient.LinearGradientActivity
 import com.lyf.customcontrol.part2.paint07.patheffect.composesumpath.ComposeSumPathActivity
 import com.lyf.customcontrol.part2.paint07.patheffect.cornerpath.CornerPathActivity
 import com.lyf.customcontrol.part2.paint07.patheffect.dashpath.DashPathActivity
@@ -57,6 +66,9 @@ import com.lyf.customcontrol.part2.pathtext02.text.pos.TextPosActivity
 import com.lyf.customcontrol.part2.pathtext02.text.typeface.custom.TextTypefaceCustomActivity
 import com.lyf.customcontrol.part2.pathtext02.text.typeface.system.TextTypefaceSystemActivity
 import com.lyf.customcontrol.part2.qqredpoint15.QqRedPointActivity
+import com.lyf.customcontrol.part2.radialgradient20.multiplecolorgradient.MultipleRadialGradientActivity
+import com.lyf.customcontrol.part2.radialgradient20.twocolorgradient.RadialGradientActivity
+import com.lyf.customcontrol.part2.radialgradient20.waterripple.WaterRippleActivity
 import com.lyf.customcontrol.part2.region03.construct.RegionConstructActivity
 import com.lyf.customcontrol.part2.region03.op.RegionOpActivity
 import com.lyf.customcontrol.part2.region03.setpath.RegionSetPathActivity
@@ -745,6 +757,102 @@ class MainAdapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             BlurMaskFilterActivity::class.java
+                        )
+                    )
+                }
+                80 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ExtractAlphaActivity::class.java
+                        )
+                    )
+                }
+                81 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ShadowControlActivity::class.java
+                        )
+                    )
+                }
+                82 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            BitmapShaderActivity::class.java
+                        )
+                    )
+                }
+                83 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            TelescopeActivity::class.java
+                        )
+                    )
+                }
+                84 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            CircleImageActivity::class.java
+                        )
+                    )
+                }
+                85 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            AvatarActivity::class.java
+                        )
+                    )
+                }
+                86 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            LinearGradientActivity::class.java
+                        )
+                    )
+                }
+                87 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MultipleLinearGradientActivity::class.java
+                        )
+                    )
+                }
+                88 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            FlashStringActivity::class.java
+                        )
+                    )
+                }
+                89 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            RadialGradientActivity::class.java
+                        )
+                    )
+                }
+                90 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MultipleRadialGradientActivity::class.java
+                        )
+                    )
+                }
+                91 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            WaterRippleActivity::class.java
                         )
                     )
                 }

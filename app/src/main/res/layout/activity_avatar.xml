@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".part2.bitmapshader18.encapsulation.AvatarActivity">
+
+    <com.lyf.customcontrol.part2.bitmapshader18.encapsulation.MyAvatarView
+        android:id="@+id/avatar_01"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:avatarSrc="@drawable/img_avatar"
+        app:format="circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.lyf.customcontrol.part2.bitmapshader18.encapsulation.MyAvatarView
+        android:id="@+id/avatar_02"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:avatarSrc="@drawable/img_avatar"
+        app:format="circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar_01" />
+
+    <com.lyf.customcontrol.part2.bitmapshader18.encapsulation.MyAvatarView
+        android:id="@+id/avatar_03"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:avatarSrc="@drawable/img_avatar"
+        app:format="rectTangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar_02"
+        app:radius="10" />
+
+    <com.lyf.customcontrol.part2.bitmapshader18.encapsulation.MyAvatarView
+        android:id="@+id/avatar_04"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="16dp"
+        app:avatarSrc="@drawable/img_avatar"
+        app:format="rectTangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar_03"
+        app:radius="30" />
+
+    <com.lyf.customcontrol.part2.bitmapshader18.encapsulation.MyAvatarView
+        android:id="@+id/avatar_05"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:avatarSrc="@drawable/img_avatar"
+        app:format="rectTangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar_04"
+        app:radius="70" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

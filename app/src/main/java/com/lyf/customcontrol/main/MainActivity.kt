@@ -99,7 +99,19 @@ class MainActivity : AppCompatActivity() {
             "QqRedPointActivity",
             "ShadowGlowActivity",
             "ShadowLayerActivity",
-            "BlurMaskFilterActivity"
+            "BlurMaskFilterActivity",
+            "ExtractAlphaActivity",
+            "ShadowControlActivity",
+            "BitmapShaderActivity",
+            "TelescopeActivity",
+            "CircleImageActivity",
+            "AvatarActivity",
+            "LinearGradientActivity",
+            "MultipleLinearGradientActivity",
+            "FlashStringActivity",
+            "RadialGradientActivity",
+            "MultipleRadialGradientActivity",
+            "WaterRippleActivity"
         )
 
         myAdapter = MainAdapter(itemList)
