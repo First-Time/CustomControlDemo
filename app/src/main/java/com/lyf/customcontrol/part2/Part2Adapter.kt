@@ -1,4 +1,4 @@
-package com.lyf.customcontrol.main
+package com.lyf.customcontrol.part2
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -99,12 +99,12 @@ import com.lyf.customcontrol.part2.text05.fontmetrics.FontMetricsActivity
 import com.lyf.customcontrol.part2.text05.fourlineandbase.BlogDrawActivity
 import com.lyf.customcontrol.part2.text05.widthheightrect.WidthHeightActivity
 
-class MainAdapter(private var activities: ArrayList<String>) :
-    RecyclerView.Adapter<MainAdapter.JumpViewHolder>() {
+class Part2Adapter(private var activities: ArrayList<String>) :
+    RecyclerView.Adapter<Part2Adapter.JumpViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JumpViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_main_activity, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_part2_activity, parent, false)
         return JumpViewHolder(view)
     }
 

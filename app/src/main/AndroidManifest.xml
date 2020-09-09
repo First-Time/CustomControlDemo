@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part2.radialgradient20.waterripple.WaterRippleActivity"></activity>
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".shape.ShapeActivity" />
+        <activity android:name=".part2.radialgradient20.waterripple.WaterRippleActivity" />
         <activity android:name=".part2.radialgradient20.multiplecolorgradient.MultipleRadialGradientActivity" />
         <activity android:name=".part2.radialgradient20.twocolorgradient.RadialGradientActivity" />
         <activity android:name=".part2.lineargradient19.flashstring.FlashStringActivity" />
@@ -101,13 +109,7 @@
         <activity android:name=".part2.draw01.point.PointActivity" />
         <activity android:name=".part2.draw01.line.LineActivity" />
         <activity android:name=".part2.draw01.circle.CircleActivity" />
-        <activity android:name=".main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".part2.Part2Activity" />
     </application>
 
 </manifest>
