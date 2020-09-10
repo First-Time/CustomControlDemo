@@ -6,6 +6,7 @@ import android.view.View
 import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.lyf.customcontrol.R
+import com.lyf.customcontrol.part1.Part1Activity
 import com.lyf.customcontrol.part2.Part2Activity
 import com.lyf.customcontrol.shape.ShapeActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_part1 -> {
-                startActivity(Intent(this@MainActivity, Part2Activity::class.java))
+                startActivity(Intent(this@MainActivity, Part1Activity::class.java))
             }
             R.id.btn_part2 -> {
                 startActivity(Intent(this@MainActivity, Part2Activity::class.java))
