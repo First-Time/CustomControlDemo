@@ -23,7 +23,11 @@ class Part1Activity : AppCompatActivity() {
         itemList = arrayListOf(
             "AnimationActivity",
             "InterpolatorActivity",
-            "AnimationCodeActivity"
+            "AnimationCodeActivity",
+            "ValueAnimatorBasicActivity",
+            "ValueAnimatorInterpolatorActivity",
+            "ValueAnimatorOfObjectActivity",
+            "PointObjectActivity"
         )
 
         myAdapter = Part1Adapter(itemList)

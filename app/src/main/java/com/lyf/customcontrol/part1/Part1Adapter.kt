@@ -11,6 +11,10 @@ import com.lyf.customcontrol.R
 import com.lyf.customcontrol.part1.animation01.AnimationActivity
 import com.lyf.customcontrol.part1.animation03.AnimationCodeActivity
 import com.lyf.customcontrol.part1.interpolator02.InterpolatorActivity
+import com.lyf.customcontrol.part1.valueanimator04.ValueAnimatorBasicActivity
+import com.lyf.customcontrol.part1.valueanimator05.ValueAnimatorInterpolatorActivity
+import com.lyf.customcontrol.part1.valueanimator06.ValueAnimatorOfObjectActivity
+import com.lyf.customcontrol.part1.valueanimator06.customobject.PointObjectActivity
 
 class Part1Adapter(private var activities: ArrayList<String>) :
     RecyclerView.Adapter<Part1Adapter.JumpViewHolder>() {
@@ -54,6 +58,38 @@ class Part1Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             AnimationCodeActivity::class.java
+                        )
+                    )
+                }
+                3 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ValueAnimatorBasicActivity::class.java
+                        )
+                    )
+                }
+                4 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ValueAnimatorInterpolatorActivity::class.java
+                        )
+                    )
+                }
+                5 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ValueAnimatorOfObjectActivity::class.java
+                        )
+                    )
+                }
+                6 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PointObjectActivity::class.java
                         )
                     )
                 }

@@ -1,7 +1,9 @@
 package com.lyf.customcontrol.part1.animation03
 
 import android.os.Bundle
-import android.view.animation.*
+import android.view.animation.Animation
+import android.view.animation.BounceInterpolator
+import android.view.animation.ScaleAnimation
 import androidx.appcompat.app.AppCompatActivity
 import com.lyf.customcontrol.R
 import kotlinx.android.synthetic.main.activity_animation_code.*
@@ -88,6 +90,6 @@ class AnimationCodeActivity : AppCompatActivity() {
 
         animation.duration = 3000
         textView.animation = animation
-        animation.start()
+        textView.startAnimation(animation)
     }
 }

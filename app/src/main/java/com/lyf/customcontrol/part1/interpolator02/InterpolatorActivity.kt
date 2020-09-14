@@ -39,6 +39,6 @@ class InterpolatorActivity : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.animation_anticipate_overshoot)
 
         textView.animation = animation
-        animation.start()
+        textView.startAnimation(animation)
     }
 }

@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part1.animation03.AnimationCodeActivity"></activity>
+        <activity android:name=".part1.valueanimator06.customobject.PointObjectActivity"></activity>
+        <activity android:name=".part1.valueanimator06.ValueAnimatorOfObjectActivity" />
+        <activity android:name=".part1.valueanimator05.ValueAnimatorInterpolatorActivity" />
+        <activity android:name=".part1.valueanimator04.ValueAnimatorBasicActivity" />
+        <activity android:name=".part1.animation03.AnimationCodeActivity" />
         <activity android:name=".part1.interpolator02.InterpolatorActivity" />
         <activity android:name=".part1.animation01.AnimationActivity" />
         <activity android:name=".part1.Part1Activity" />
