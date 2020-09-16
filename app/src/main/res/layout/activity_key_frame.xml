@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".part1.valueanimator06.customobject.PointObjectActivity">
+    tools:context=".part1.propertyvaluesholderkeyframe08.keyframe.KeyFrameActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start_anim"
@@ -24,13 +24,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_start_anim" />
 
-    <com.lyf.customcontrol.part1.valueanimator06.customobject.MyPointView
-        android:id="@+id/myPointView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_dog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_cancel_anim" />
+
+    <com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.keyframe.MyTextView
+        android:id="@+id/textView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:text="A" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

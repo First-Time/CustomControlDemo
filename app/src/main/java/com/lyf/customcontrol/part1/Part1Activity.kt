@@ -27,7 +27,12 @@ class Part1Activity : AppCompatActivity() {
             "ValueAnimatorBasicActivity",
             "ValueAnimatorInterpolatorActivity",
             "ValueAnimatorOfObjectActivity",
-            "PointObjectActivity"
+            "PointObjectActivity",
+            "ObjectAnimatorActivity",
+            "PointObjectAnimatorActivity",
+            "PropertyValuesHolderActivity",
+            "PropertyValuesHolderOfObjectActivity",
+            "KeyFrameActivity"
         )
 
         myAdapter = Part1Adapter(itemList)

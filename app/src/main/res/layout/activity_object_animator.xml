@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".part1.valueanimator06.customobject.PointObjectActivity">
+    tools:context=".part1.objectanimator07.ObjectAnimatorActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start_anim"
@@ -24,11 +24,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_start_anim" />
 
-    <com.lyf.customcontrol.part1.valueanimator06.customobject.MyPointView
-        android:id="@+id/myPointView"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Hello World"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_cancel_anim" />

@@ -11,6 +11,11 @@ import com.lyf.customcontrol.R
 import com.lyf.customcontrol.part1.animation01.AnimationActivity
 import com.lyf.customcontrol.part1.animation03.AnimationCodeActivity
 import com.lyf.customcontrol.part1.interpolator02.InterpolatorActivity
+import com.lyf.customcontrol.part1.objectanimator07.ObjectAnimatorActivity
+import com.lyf.customcontrol.part1.objectanimator07.customobjectanimator.PointObjectAnimatorActivity
+import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.keyframe.KeyFrameActivity
+import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.offloatofint.PropertyValuesHolderActivity
+import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.ofobject.PropertyValuesHolderOfObjectActivity
 import com.lyf.customcontrol.part1.valueanimator04.ValueAnimatorBasicActivity
 import com.lyf.customcontrol.part1.valueanimator05.ValueAnimatorInterpolatorActivity
 import com.lyf.customcontrol.part1.valueanimator06.ValueAnimatorOfObjectActivity
@@ -90,6 +95,46 @@ class Part1Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             PointObjectActivity::class.java
+                        )
+                    )
+                }
+                7 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ObjectAnimatorActivity::class.java
+                        )
+                    )
+                }
+                8 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PointObjectAnimatorActivity::class.java
+                        )
+                    )
+                }
+                9 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PropertyValuesHolderActivity::class.java
+                        )
+                    )
+                }
+                10 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            PropertyValuesHolderOfObjectActivity::class.java
+                        )
+                    )
+                }
+                11 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            KeyFrameActivity::class.java
                         )
                     )
                 }
