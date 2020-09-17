@@ -16,6 +16,8 @@ import com.lyf.customcontrol.part1.objectanimator07.customobjectanimator.PointOb
 import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.keyframe.KeyFrameActivity
 import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.offloatofint.PropertyValuesHolderActivity
 import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.ofobject.PropertyValuesHolderOfObjectActivity
+import com.lyf.customcontrol.part1.uniteanimatorcode09.UnitAnimatorCodeActivity
+import com.lyf.customcontrol.part1.uniteanimatorxml10.*
 import com.lyf.customcontrol.part1.valueanimator04.ValueAnimatorBasicActivity
 import com.lyf.customcontrol.part1.valueanimator05.ValueAnimatorInterpolatorActivity
 import com.lyf.customcontrol.part1.valueanimator06.ValueAnimatorOfObjectActivity
@@ -135,6 +137,62 @@ class Part1Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             KeyFrameActivity::class.java
+                        )
+                    )
+                }
+                12 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            UnitAnimatorCodeActivity::class.java
+                        )
+                    )
+                }
+                13 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ValueAnimatorTranslationXmlActivity::class.java
+                        )
+                    )
+                }
+                14 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ValueAnimatorColorXmlActivity::class.java
+                        )
+                    )
+                }
+                15 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ObjectAnimatorTranslationXmlActivity::class.java
+                        )
+                    )
+                }
+                16 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ObjectAnimatorColorXmlActivity::class.java
+                        )
+                    )
+                }
+                17 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            AnimatorSetTranslationXmlActivity::class.java
+                        )
+                    )
+                }
+                18 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            AnimatorMenuActivity::class.java
                         )
                     )
                 }
