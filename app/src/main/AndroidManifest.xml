@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part1.uniteanimatorxml10.AnimatorMenuActivity"></activity>
+        <activity android:name=".part1.layoutanimation11.gridviewanimation.GridViewAnimationCodeActivity"></activity>
+        <activity android:name=".part1.layoutanimation11.gridviewanimation.GridViewAnimationXmlActivity" />
+        <activity android:name=".part1.layoutanimation11.listviewanimation.ListViewAnimationCodeActivity" />
+        <activity android:name=".part1.layoutanimation11.listviewanimation.ListViewAnimationXmlActivity" />
+        <activity android:name=".part1.uniteanimatorxml10.AnimatorMenuActivity" />
         <activity android:name=".part1.uniteanimatorxml10.AnimatorSetTranslationXmlActivity" />
         <activity android:name=".part1.uniteanimatorxml10.ObjectAnimatorColorXmlActivity" />
         <activity android:name=".part1.uniteanimatorxml10.ObjectAnimatorTranslationXmlActivity" />

@@ -39,7 +39,11 @@ class Part1Activity : AppCompatActivity() {
             "ObjectAnimatorTranslationXmlActivity",
             "ObjectAnimatorColorXmlActivity",
             "AnimatorSetTransitionXmlActivity",
-            "AnimatorMenuActivity"
+            "AnimatorMenuActivity",
+            "ListViewAnimationActivity",
+            "ListViewAnimationCodeActivity",
+            "GridViewAnimationXmlActivity",
+            "GridViewAnimationCodeActivity"
         )
 
         myAdapter = Part1Adapter(itemList)

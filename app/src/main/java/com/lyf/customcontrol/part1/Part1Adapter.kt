@@ -11,6 +11,10 @@ import com.lyf.customcontrol.R
 import com.lyf.customcontrol.part1.animation01.AnimationActivity
 import com.lyf.customcontrol.part1.animation03.AnimationCodeActivity
 import com.lyf.customcontrol.part1.interpolator02.InterpolatorActivity
+import com.lyf.customcontrol.part1.layoutanimation11.gridviewanimation.GridViewAnimationCodeActivity
+import com.lyf.customcontrol.part1.layoutanimation11.gridviewanimation.GridViewAnimationXmlActivity
+import com.lyf.customcontrol.part1.layoutanimation11.listviewanimation.ListViewAnimationCodeActivity
+import com.lyf.customcontrol.part1.layoutanimation11.listviewanimation.ListViewAnimationXmlActivity
 import com.lyf.customcontrol.part1.objectanimator07.ObjectAnimatorActivity
 import com.lyf.customcontrol.part1.objectanimator07.customobjectanimator.PointObjectAnimatorActivity
 import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.keyframe.KeyFrameActivity
@@ -193,6 +197,38 @@ class Part1Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             AnimatorMenuActivity::class.java
+                        )
+                    )
+                }
+                19 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ListViewAnimationXmlActivity::class.java
+                        )
+                    )
+                }
+                20 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ListViewAnimationCodeActivity::class.java
+                        )
+                    )
+                }
+                21 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            GridViewAnimationXmlActivity::class.java
+                        )
+                    )
+                }
+                22 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            GridViewAnimationCodeActivity::class.java
                         )
                     )
                 }
