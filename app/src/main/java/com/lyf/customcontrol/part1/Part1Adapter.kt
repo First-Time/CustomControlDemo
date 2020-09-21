@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
+import com.lyf.customcontrol.part1.animatelayoutchanges12.AnimateLayoutChangesActivity
 import com.lyf.customcontrol.part1.animation01.AnimationActivity
 import com.lyf.customcontrol.part1.animation03.AnimationCodeActivity
 import com.lyf.customcontrol.part1.interpolator02.InterpolatorActivity
@@ -229,6 +230,14 @@ class Part1Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             GridViewAnimationCodeActivity::class.java
+                        )
+                    )
+                }
+                23 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            AnimateLayoutChangesActivity::class.java
                         )
                     )
                 }

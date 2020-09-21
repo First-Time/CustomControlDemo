@@ -43,7 +43,8 @@ class Part1Activity : AppCompatActivity() {
             "ListViewAnimationActivity",
             "ListViewAnimationCodeActivity",
             "GridViewAnimationXmlActivity",
-            "GridViewAnimationCodeActivity"
+            "GridViewAnimationCodeActivity",
+            "AnimateLayoutChangesActivity"
         )
 
         myAdapter = Part1Adapter(itemList)
