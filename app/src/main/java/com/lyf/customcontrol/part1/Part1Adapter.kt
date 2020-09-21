@@ -16,6 +16,7 @@ import com.lyf.customcontrol.part1.layoutanimation11.gridviewanimation.GridViewA
 import com.lyf.customcontrol.part1.layoutanimation11.gridviewanimation.GridViewAnimationXmlActivity
 import com.lyf.customcontrol.part1.layoutanimation11.listviewanimation.ListViewAnimationCodeActivity
 import com.lyf.customcontrol.part1.layoutanimation11.listviewanimation.ListViewAnimationXmlActivity
+import com.lyf.customcontrol.part1.listviewitementeranimator13.ListViewItemEnterAnimatorActivity
 import com.lyf.customcontrol.part1.objectanimator07.ObjectAnimatorActivity
 import com.lyf.customcontrol.part1.objectanimator07.customobjectanimator.PointObjectAnimatorActivity
 import com.lyf.customcontrol.part1.propertyvaluesholderkeyframe08.keyframe.KeyFrameActivity
@@ -238,6 +239,14 @@ class Part1Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             AnimateLayoutChangesActivity::class.java
+                        )
+                    )
+                }
+                24 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ListViewItemEnterAnimatorActivity::class.java
                         )
                     )
                 }

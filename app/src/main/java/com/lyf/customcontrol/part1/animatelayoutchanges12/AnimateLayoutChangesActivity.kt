@@ -96,19 +96,23 @@ class AnimateLayoutChangesActivity : AppCompatActivity() {
         linearLayout.layoutTransition = layoutTransition
 
         btn_add.setOnClickListener {
-            val button = AppCompatButton(this)
-            val layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            button.layoutParams = layoutParams
-            button.text = "button ${i++}"
-            linearLayout.addView(button, 0)
+            if (!layoutTransition.isRunning) {
+                val button = AppCompatButton(this)
+                val layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                button.layoutParams = layoutParams
+                button.text = "button ${i++}"
+                linearLayout.addView(button, 0)
+            }
         }
         btn_remove.setOnClickListener {
-            if (i > 0) {
-                linearLayout.removeViewAt(0)
-                i--
+            if (!layoutTransition.isRunning) {
+                if (i > 0) {
+                    linearLayout.removeViewAt(0)
+                    i--
+                }
             }
         }
     }
