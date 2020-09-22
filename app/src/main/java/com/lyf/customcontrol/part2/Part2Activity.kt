@@ -11,10 +11,10 @@ import kotlinx.android.synthetic.main.activity_part2.*
 
 class Part2Activity : AppCompatActivity() {
 
-    lateinit var itemList: ArrayList<String>
+    private lateinit var itemList: ArrayList<String>
 
-    lateinit var myAdapter: Part2Adapter
-    lateinit var myLayoutManager: RecyclerView.LayoutManager
+    private lateinit var myAdapter: Part2Adapter
+    private lateinit var myLayoutManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

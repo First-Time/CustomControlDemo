@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.lyf.customcontrol.R
 import com.lyf.customcontrol.part1.Part1Activity
 import com.lyf.customcontrol.part2.Part2Activity
+import com.lyf.customcontrol.part3.Part3Activity
 import com.lyf.customcontrol.shape.ShapeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 startActivity(Intent(this@MainActivity, Part2Activity::class.java))
             }
             R.id.btn_part3 -> {
-                startActivity(Intent(this@MainActivity, Part2Activity::class.java))
+                startActivity(Intent(this@MainActivity, Part3Activity::class.java))
             }
             R.id.btn_part_shape -> {
                 startActivity(Intent(this@MainActivity, ShapeActivity::class.java))
