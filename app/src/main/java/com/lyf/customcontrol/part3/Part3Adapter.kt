@@ -8,6 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
+import com.lyf.customcontrol.part3.flowlayout02.MyFlowLayoutActivity
 import com.lyf.customcontrol.part3.measurelayout01.MyLinLayoutActivity
 
 class Part3Adapter(private var activities: ArrayList<String>) :
@@ -36,6 +37,14 @@ class Part3Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             MyLinLayoutActivity::class.java
+                        )
+                    )
+                }
+                1 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            MyFlowLayoutActivity::class.java
                         )
                     )
                 }

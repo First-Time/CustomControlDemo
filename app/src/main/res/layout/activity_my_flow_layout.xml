@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".part3.flowlayout02.MyFlowLayoutActivity">
+
+    <com.lyf.customcontrol.part3.flowlayout02.MyFlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff00ff"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="你好" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="我爱你中国" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="我爱北京天安门" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="北京" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="天安门上太阳升" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="Kotlin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="Java" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="iOS" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="今天是你的生日" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="生日快乐" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="天天向上" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="天天向上天天向上" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Custom.TextView"
+            android:text="天天向上" />
+
+    </com.lyf.customcontrol.part3.flowlayout02.MyFlowLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

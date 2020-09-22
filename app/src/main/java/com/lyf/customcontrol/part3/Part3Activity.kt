@@ -21,7 +21,8 @@ class Part3Activity : AppCompatActivity() {
         setContentView(R.layout.activity_part3)
 
         itemList = arrayListOf(
-            "MyLinLayoutActivity"
+            "MyLinLayoutActivity",
+            "MyFlowLayoutActivity"
         )
 
         myAdapter = Part3Adapter(itemList)
