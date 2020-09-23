@@ -22,7 +22,8 @@ class Part3Activity : AppCompatActivity() {
 
         itemList = arrayListOf(
             "MyLinLayoutActivity",
-            "MyFlowLayoutActivity"
+            "MyFlowLayoutActivity",
+            "WaterFallLayoutActivity"
         )
 
         myAdapter = Part3Adapter(itemList)

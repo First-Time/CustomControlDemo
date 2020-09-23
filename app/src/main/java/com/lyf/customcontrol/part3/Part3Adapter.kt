@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
 import com.lyf.customcontrol.part3.flowlayout02.MyFlowLayoutActivity
 import com.lyf.customcontrol.part3.measurelayout01.MyLinLayoutActivity
+import com.lyf.customcontrol.part3.waterfalllayout03.WaterFallLayoutActivity
 
 class Part3Adapter(private var activities: ArrayList<String>) :
     RecyclerView.Adapter<Part3Adapter.JumpViewHolder>() {
@@ -45,6 +46,14 @@ class Part3Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             MyFlowLayoutActivity::class.java
+                        )
+                    )
+                }
+                2 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            WaterFallLayoutActivity::class.java
                         )
                     )
                 }

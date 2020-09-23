@@ -43,8 +43,8 @@ class MyFlowLayout(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
             }
             //最后再加上最后一行的高度，最后一行是不会超出width范围的，所以要单独处理
             if (i == childCount - 1) {
-                height += lineHeight;
-                width = max(width, lineWidth);
+                height += lineHeight
+                width = max(width, lineWidth)
             }
         }
         setMeasuredDimension(
@@ -74,8 +74,8 @@ class MyFlowLayout(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) :
                 lineWidth = childWidth
                 lineHeight = childHeight
             } else {
-                lineHeight = max(lineHeight, childHeight)
                 lineWidth += childWidth
+                lineHeight = max(lineHeight, childHeight)
             }
 
             val lc = left + marginLayoutParams.leftMargin
