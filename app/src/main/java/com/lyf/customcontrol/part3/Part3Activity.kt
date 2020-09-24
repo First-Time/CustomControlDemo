@@ -23,7 +23,8 @@ class Part3Activity : AppCompatActivity() {
         itemList = arrayListOf(
             "MyLinLayoutActivity",
             "MyFlowLayoutActivity",
-            "WaterFallLayoutActivity"
+            "WaterFallLayoutActivity",
+            "RecyclerViewBaseActivity"
         )
 
         myAdapter = Part3Adapter(itemList)

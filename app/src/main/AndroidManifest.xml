@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part3.waterfalllayout03.WaterFallLayoutActivity"></activity>
+        <activity android:name=".part3.recyclerview04.RecyclerViewBaseActivity"></activity>
+        <activity android:name=".part3.waterfalllayout03.WaterFallLayoutActivity" />
         <activity android:name=".part3.flowlayout02.MyFlowLayoutActivity" />
         <activity android:name=".part3.Part3Activity" />
         <activity android:name=".part3.measurelayout01.MyLinLayoutActivity" />
