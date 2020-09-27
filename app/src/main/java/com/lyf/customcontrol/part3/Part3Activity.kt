@@ -3,7 +3,7 @@ package com.lyf.customcontrol.part3
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lyf.customcontrol.R
 import com.lyf.customcontrol.main.DividerGridItemDecoration
@@ -24,20 +24,24 @@ class Part3Activity : AppCompatActivity() {
             "MyLinLayoutActivity",
             "MyFlowLayoutActivity",
             "WaterFallLayoutActivity",
-            "RecyclerViewBaseActivity"
+            "RecyclerViewBaseActivity",
+            "ItemDecorationActivity",
+            "GetItemOffsetsActivity",
+            "OnDrawActivity",
+            "OnDrawOverActivity"
         )
 
         myAdapter = Part3Adapter(itemList)
 //        myLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-//        myLayoutManager = GridLayoutManager(this, 2)
-        myLayoutManager = LinearLayoutManager(this)
+        myLayoutManager = GridLayoutManager(this, 3)
+//        myLayoutManager = LinearLayoutManager(this)
+//        (myLayoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
         recyclerView.layoutManager = myLayoutManager
 
 //        var gridItemDecoration = GridDividerItemDecoration(5, Color.RED)
 //        recyclerView.addItemDecoration(gridItemDecoration)
 
-        var dividerGridItemDecoration =
-            DividerGridItemDecoration(this)
+        var dividerGridItemDecoration = DividerGridItemDecoration(this)
         recyclerView.addItemDecoration(dividerGridItemDecoration)
 
 //        var verticalItemDecoration =
@@ -50,7 +54,6 @@ class Part3Activity : AppCompatActivity() {
 //        recyclerView.addItemDecoration(horizontalItemDecoration)
 
         recyclerView.itemAnimator = DefaultItemAnimator()
-
 
         recyclerView.adapter = myAdapter
 

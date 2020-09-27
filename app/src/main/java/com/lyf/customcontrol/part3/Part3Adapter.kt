@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lyf.customcontrol.R
 import com.lyf.customcontrol.part3.flowlayout02.MyFlowLayoutActivity
+import com.lyf.customcontrol.part3.itemdecoration05.divideritemdecoration.ItemDecorationActivity
+import com.lyf.customcontrol.part3.itemdecoration05.getitemoffsets.GetItemOffsetsActivity
+import com.lyf.customcontrol.part3.itemdecoration05.ondraw.OnDrawActivity
+import com.lyf.customcontrol.part3.itemdecoration05.ondrawover.OnDrawOverActivity
 import com.lyf.customcontrol.part3.measurelayout01.MyLinLayoutActivity
 import com.lyf.customcontrol.part3.recyclerview04.RecyclerViewBaseActivity
 import com.lyf.customcontrol.part3.waterfalllayout03.WaterFallLayoutActivity
@@ -63,6 +67,38 @@ class Part3Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             RecyclerViewBaseActivity::class.java
+                        )
+                    )
+                }
+                4 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ItemDecorationActivity::class.java
+                        )
+                    )
+                }
+                5 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            GetItemOffsetsActivity::class.java
+                        )
+                    )
+                }
+                6 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            OnDrawActivity::class.java
+                        )
+                    )
+                }
+                7 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            OnDrawOverActivity::class.java
                         )
                     )
                 }

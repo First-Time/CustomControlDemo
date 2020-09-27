@@ -46,7 +46,12 @@ class DividerGridItemDecoration() : RecyclerView.ItemDecoration() {
             val left: Int = child.left - params.leftMargin
             val right: Int = child.right + params.rightMargin + mDivider?.intrinsicWidth!!
             val top: Int = child.bottom + params.bottomMargin
-            val bottom = top + mDivider?.intrinsicHeight!!
+//            val bottom: Int = top + mDivider?.intrinsicHeight!!
+            val bottom = if (isLastRaw(parent, i, getSpanCount(parent), childCount)) {
+                top
+            } else {
+                top + mDivider?.intrinsicHeight!!
+            }
             mDivider?.setBounds(left, top, right, bottom)
             mDivider?.draw(c)
         }
@@ -60,7 +65,12 @@ class DividerGridItemDecoration() : RecyclerView.ItemDecoration() {
             val top: Int = child.top - params.topMargin
             val bottom: Int = child.bottom + params.bottomMargin
             val left: Int = child.right + params.rightMargin
-            val right = left + mDivider?.intrinsicWidth!!
+//            val right: Int = left + mDivider?.intrinsicWidth!!
+            val right = if (isLastColumn(parent, i, getSpanCount(parent), childCount)) {
+                left
+            } else {
+                left + mDivider?.intrinsicWidth!!
+            }
             mDivider?.setBounds(left, top, right, bottom)
             mDivider?.draw(c)
         }
@@ -104,9 +114,13 @@ class DividerGridItemDecoration() : RecyclerView.ItemDecoration() {
         var childCount = childCount
         val layoutManager: RecyclerView.LayoutManager? = parent.layoutManager
         if (layoutManager is GridLayoutManager) {
-            childCount -= childCount % spanCount
-            if (pos >= childCount) // 如果是最后一行，则不需要绘制底部
+            if (childCount <= spanCount) {
                 return true
+            } else {
+                childCount -= if (childCount % spanCount == 0) spanCount else (childCount % spanCount)
+                if (pos >= childCount) // 如果是最后一行，则不需要绘制底部
+                    return true
+            }
         } else if (layoutManager is StaggeredGridLayoutManager) {
             val orientation = layoutManager.orientation
             // StaggeredGridLayoutManager 且纵向滚动
@@ -128,7 +142,33 @@ class DividerGridItemDecoration() : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(outRect: Rect, itemPosition: Int, parent: RecyclerView) {
         val spanCount = getSpanCount(parent)
         val childCount = parent.adapter?.itemCount!!
-        when {
+
+        //解决下边的问题
+        val column = itemPosition % spanCount
+        var bottom = 0
+        val left = column * mDivider?.intrinsicWidth!! / spanCount
+        val right = mDivider?.intrinsicWidth!! - (column + 1) * mDivider?.intrinsicWidth!! / spanCount
+        if (!isLastRaw(parent, itemPosition, spanCount, childCount)) {
+            bottom = mDivider?.intrinsicHeight!!
+        }
+        outRect.set(left, 0, right, bottom)
+
+        //当有两列的时候，当竖直分割比较宽的时候会发现第一列+分割的宽度等于第二列的宽度
+        /*var marginRight: Int = mDivider?.intrinsicWidth!!
+        var marginBottom: Int = mDivider?.intrinsicHeight!!
+
+        if (isLastRaw(parent, itemPosition, spanCount, childCount)) //如果是最后一行，则不需要绘制底部
+        {
+            marginBottom = 0
+        }
+        if (isLastColumn(parent, itemPosition, spanCount, childCount)) //如果是最后一列，则不需要绘制右边
+        {
+            marginRight = 0
+        }
+
+        outRect.set(0, 0, marginRight, marginBottom)*/
+
+        /*when {
             isLastRaw(parent, itemPosition, spanCount, childCount) // 如果是最后一行，则不需要绘制底部
             -> {
                 outRect.set(0, 0, mDivider?.intrinsicWidth!!, 0)
@@ -143,6 +183,6 @@ class DividerGridItemDecoration() : RecyclerView.ItemDecoration() {
                     mDivider?.intrinsicHeight!!
                 )
             }
-        }
+        }*/
     }
 }

@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part3.recyclerview04.RecyclerViewBaseActivity"></activity>
+        <activity android:name=".part3.itemdecoration05.ondrawover.OnDrawOverActivity"></activity>
+        <activity android:name=".part3.itemdecoration05.ondraw.OnDrawActivity" />
+        <activity android:name=".part3.itemdecoration05.getitemoffsets.GetItemOffsetsActivity" />
+        <activity android:name=".part3.itemdecoration05.divideritemdecoration.ItemDecorationActivity" />
+        <activity android:name=".part3.recyclerview04.RecyclerViewBaseActivity" />
         <activity android:name=".part3.waterfalllayout03.WaterFallLayoutActivity" />
         <activity android:name=".part3.flowlayout02.MyFlowLayoutActivity" />
         <activity android:name=".part3.Part3Activity" />

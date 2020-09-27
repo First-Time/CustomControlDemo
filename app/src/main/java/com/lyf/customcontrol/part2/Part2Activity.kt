@@ -3,7 +3,7 @@ package com.lyf.customcontrol.part2
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lyf.customcontrol.R
 import com.lyf.customcontrol.main.DividerGridItemDecoration
@@ -117,15 +117,14 @@ class Part2Activity : AppCompatActivity() {
 
         myAdapter = Part2Adapter(itemList)
 //        myLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-//        myLayoutManager = GridLayoutManager(this, 2)
-        myLayoutManager = LinearLayoutManager(this)
+        myLayoutManager = GridLayoutManager(this, 3)
+//        myLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = myLayoutManager
 
 //        var gridItemDecoration = GridDividerItemDecoration(5, Color.RED)
 //        recyclerView.addItemDecoration(gridItemDecoration)
 
-        var dividerGridItemDecoration =
-            DividerGridItemDecoration(this)
+        var dividerGridItemDecoration = DividerGridItemDecoration(this)
         recyclerView.addItemDecoration(dividerGridItemDecoration)
 
 //        var verticalItemDecoration =
