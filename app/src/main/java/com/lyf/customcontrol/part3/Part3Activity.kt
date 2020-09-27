@@ -28,7 +28,8 @@ class Part3Activity : AppCompatActivity() {
             "ItemDecorationActivity",
             "GetItemOffsetsActivity",
             "OnDrawActivity",
-            "OnDrawOverActivity"
+            "OnDrawOverActivity",
+            "CustomLayoutManagerActivity"
         )
 
         myAdapter = Part3Adapter(itemList)

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part3.itemdecoration05.ondrawover.OnDrawOverActivity"></activity>
+        <activity android:name=".part3.layoutmanager06.CustomLayoutManagerActivity"></activity>
+        <activity android:name=".part3.itemdecoration05.ondrawover.OnDrawOverActivity" />
         <activity android:name=".part3.itemdecoration05.ondraw.OnDrawActivity" />
         <activity android:name=".part3.itemdecoration05.getitemoffsets.GetItemOffsetsActivity" />
         <activity android:name=".part3.itemdecoration05.divideritemdecoration.ItemDecorationActivity" />

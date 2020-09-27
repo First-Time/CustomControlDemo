@@ -23,10 +23,7 @@ class ItemDecorationActivity : AppCompatActivity() {
         val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         recyclerView.addItemDecoration(itemDecoration)
 
-        val myAdapter =
-            RecyclerViewAdapter(
-                dataList
-            )
+        val myAdapter = RecyclerViewAdapter(dataList)
         recyclerView.adapter = myAdapter
     }
 

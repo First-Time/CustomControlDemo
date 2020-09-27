@@ -13,6 +13,7 @@ import com.lyf.customcontrol.part3.itemdecoration05.divideritemdecoration.ItemDe
 import com.lyf.customcontrol.part3.itemdecoration05.getitemoffsets.GetItemOffsetsActivity
 import com.lyf.customcontrol.part3.itemdecoration05.ondraw.OnDrawActivity
 import com.lyf.customcontrol.part3.itemdecoration05.ondrawover.OnDrawOverActivity
+import com.lyf.customcontrol.part3.layoutmanager06.CustomLayoutManagerActivity
 import com.lyf.customcontrol.part3.measurelayout01.MyLinLayoutActivity
 import com.lyf.customcontrol.part3.recyclerview04.RecyclerViewBaseActivity
 import com.lyf.customcontrol.part3.waterfalllayout03.WaterFallLayoutActivity
@@ -99,6 +100,14 @@ class Part3Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             OnDrawOverActivity::class.java
+                        )
+                    )
+                }
+                8 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            CustomLayoutManagerActivity::class.java
                         )
                     )
                 }

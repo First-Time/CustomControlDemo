@@ -22,10 +22,7 @@ class OnDrawActivity : AppCompatActivity() {
         val itemDecoration = LinearItemDecoration(this)
         recyclerView.addItemDecoration(itemDecoration)
 
-        val myAdapter =
-            RecyclerViewAdapter(
-                dataList
-            )
+        val myAdapter = RecyclerViewAdapter(dataList)
         recyclerView.adapter = myAdapter
     }
 

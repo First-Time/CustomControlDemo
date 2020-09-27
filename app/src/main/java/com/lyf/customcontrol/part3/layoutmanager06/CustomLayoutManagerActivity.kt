@@ -1,26 +1,20 @@
-package com.lyf.customcontrol.part3.itemdecoration05.ondrawover
+package com.lyf.customcontrol.part3.layoutmanager06
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.lyf.customcontrol.R
-import kotlinx.android.synthetic.main.activity_on_draw_over.*
+import kotlinx.android.synthetic.main.activity_custom_layout_manager.*
 
-class OnDrawOverActivity : AppCompatActivity() {
+class CustomLayoutManagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_on_draw_over)
+        setContentView(R.layout.activity_custom_layout_manager)
 
         val dataList = getData()
 
         //线性布局
-        val layoutManager = LinearLayoutManager(this)
-        //竖向滚动
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
+        val layoutManager = CustomLayoutManager()
         recyclerView.layoutManager = layoutManager
-
-        val itemDecoration = LinearItemDecoration(this)
-        recyclerView.addItemDecoration(itemDecoration)
 
         val myAdapter = RecyclerViewAdapter(dataList)
         recyclerView.adapter = myAdapter
