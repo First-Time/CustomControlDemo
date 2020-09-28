@@ -29,7 +29,10 @@ class Part3Activity : AppCompatActivity() {
             "GetItemOffsetsActivity",
             "OnDrawActivity",
             "OnDrawOverActivity",
-            "CustomLayoutManagerActivity"
+            "CustomLayoutManagerActivity",
+            "RecyclerViewOfficialActivity",
+            "RecyclerViewCustomActivity",
+            "ReuseCustomActivity"
         )
 
         myAdapter = Part3Adapter(itemList)

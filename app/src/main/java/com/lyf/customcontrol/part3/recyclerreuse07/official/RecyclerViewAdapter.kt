@@ -1,4 +1,4 @@
-package com.lyf.customcontrol.part3.recyclerview04
+package com.lyf.customcontrol.part3.recyclerreuse07.official
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,14 +11,8 @@ import kotlin.random.Random
 
 class RecyclerViewAdapter(private var dataList: ArrayList<String>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private val mHeights = ArrayList<Int>()
     private val mTitleNum = 10
-
-    init {
-        for (i in 0..dataList.size) {
-            mHeights.add(Random.nextInt(200, 800))
-        }
-    }
+    private var mCreatedHolder = 0
 
     class TitleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: AppCompatTextView = itemView.findViewById(R.id.title)
@@ -43,6 +37,8 @@ class RecyclerViewAdapter(private var dataList: ArrayList<String>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        mCreatedHolder++
+        println("reuse onCreateViewHolder num:$mCreatedHolder")
         var view: View?
         return if (viewType == ItemType.ITEM_TYPE_TITLE.ordinal) {
             view = LayoutInflater.from(parent.context)
@@ -60,15 +56,12 @@ class RecyclerViewAdapter(private var dataList: ArrayList<String>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        println("reuse onBindViewHolder")
         if (holder is TitleHolder) {
             holder.title.text = dataList[position]
         }
         if (holder is TextHolder) {
             holder.textView.text = dataList[position]
-
-            val layoutParams = holder.textView.layoutParams
-            layoutParams.height = mHeights[position]
-            holder.textView.layoutParams = layoutParams
         }
     }
 
