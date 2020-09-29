@@ -25,10 +25,11 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
         mItemHeight = getDecoratedMeasuredHeight(childView)
         val visibleCount = ceil(getVerticalSpace() / mItemHeight.toFloat()).toInt()
 
-        var offsetY = 0
+        var offsetY = paddingTop //offsetY首先便宜paddingTop的距离
 
         for (i in 0 until itemCount) {
-            val rect = Rect(0, offsetY, mItemWidth, mItemHeight + offsetY)
+            //需要考虑paddingLeft
+            val rect = Rect(paddingLeft, offsetY, mItemWidth + paddingLeft, mItemHeight + offsetY)
             mItemRectArray.put(i, rect)
             offsetY += mItemHeight
         }
@@ -61,8 +62,8 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
         return Rect(
             paddingLeft,
             paddingTop + mSumDy + travel,
-            width + paddingRight,
-            getVerticalSpace() + mSumDy + travel
+            width - paddingRight,
+            getVerticalSpace() + paddingTop + mSumDy + travel //需要加上paddingTop
         )
     }
 
