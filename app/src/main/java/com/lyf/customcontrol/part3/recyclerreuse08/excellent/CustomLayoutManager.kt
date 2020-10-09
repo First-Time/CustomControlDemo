@@ -1,7 +1,8 @@
-package com.lyf.customcontrol.part3.recyclerreuse07.reusecustom
+package com.lyf.customcontrol.part3.recyclerreuse08.excellent
 
 import android.graphics.Rect
 import android.util.SparseArray
+import android.util.SparseBooleanArray
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.ceil
 import kotlin.math.max
@@ -12,12 +13,17 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
     private var mItemWidth = 0
     private var mItemHeight = 0
     private val mItemRectArray = SparseArray<Rect>()
+    private val mHasAttachedItems = SparseBooleanArray() //true表示已经在布局中，false表示没有在布局中
 
     override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
         detachAndScrapAttachedViews(recycler!!)
         if (itemCount == 0) {
             return
         }
+
+        mItemRectArray.clear()
+        mHasAttachedItems.clear()
+
         //将item的位置存储起来
         val childView = recycler?.getViewForPosition(0)
         measureChildWithMargins(childView, 0, 0)
@@ -31,6 +37,7 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
             //需要考虑paddingLeft
             val rect = Rect(paddingLeft, offsetY, mItemWidth + paddingLeft, mItemHeight + offsetY)
             mItemRectArray.put(i, rect)
+            mHasAttachedItems.put(i, false)
             offsetY += mItemHeight
         }
 
@@ -58,12 +65,12 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
     /**
      * 获取当前屏幕的位置
      */
-    private fun getVisibleArea(travel: Int): Rect {
+    private fun getVisibleArea(): Rect {
         return Rect(
             paddingLeft,
-            paddingTop + mSumDy + travel,
+            paddingTop + mSumDy,
             width - paddingRight,
-            getVerticalSpace() + paddingTop + mSumDy + travel //需要加上paddingTop
+            getVerticalSpace() + paddingTop + mSumDy //需要加上paddingTop
         )
     }
 
@@ -83,32 +90,37 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
             travel = mTotalHeight - getVerticalSpace() - mSumDy
         }
 
+        if (travel == 0) return 0
+
+        mSumDy += travel
+
+        val visibleRect = getVisibleArea()
         //从下向上滑动时回收越界子View
         for (i in childCount - 1 downTo 0) {
             val child = getChildAt(i)
-            if (travel > 0) { //需要回收当前屏幕，上越界的View
-                if (getDecoratedBottom(child!!) - travel < 0) {
-                    removeAndRecycleView(child, recycler!!)
-                    continue
-                }
-            } else { //需要回收当前屏幕，下越界的View
-                if (getDecoratedTop(child!!) - travel > height - paddingBottom) {
-                    removeAndRecycleView(child, recycler!!)
-                    continue
-                }
+            val position = getPosition(child!!)
+            val rect = mItemRectArray.get(position)
+            if (Rect.intersects(visibleRect, rect)) {
+                layoutDecoratedWithMargins(child, rect.left, rect.top - mSumDy, rect.right, rect.bottom- mSumDy)
+                child.rotationY += 1
+                mHasAttachedItems.put(position, true)
+            } else {
+                removeAndRecycleView(child, recycler!!)
+                mHasAttachedItems.put(position, false)
             }
         }
 
-        val visibleRect = getVisibleArea(travel)
+        val lastView = getChildAt(childCount - 1)
+        val firstView = getChildAt(0)
+
         //布局子View阶段
-        if (travel >= 0) {
-            val lastView = getChildAt(childCount - 1)
-            val minPos = getPosition(lastView!!) + 1 //从最后一个View + 1开始吧
+        if (travel > 0) {
+            val minPos = getPosition(firstView!!)
 
             //顺序addChildView
             for (i in minPos until itemCount) {
                 val rect = mItemRectArray.get(i)
-                if (visibleRect.intersect(rect)) {
+                if (Rect.intersects(visibleRect, rect) && !mHasAttachedItems.get(i)) {
                     val child = recycler?.getViewForPosition(i)
                     addView(child)
                     measureChildWithMargins(child!!, 0, 0)
@@ -119,18 +131,17 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
                         rect.right,
                         rect.bottom - mSumDy
                     )
-                } else {
-                    break
+                    child.rotationY += 1
+                    mHasAttachedItems.put(i, true)
                 }
             }
-        } else {
-            val firstView = getChildAt(0)
-            val maxPos = getPosition(firstView!!) - 1 //从第一个View + 1开始
+        } else if (travel < 0) {
+            val maxPos = getPosition(lastView!!)
 
             //顺序addChildView
             for (i in maxPos downTo 0) {
                 val rect = mItemRectArray.get(i)
-                if (visibleRect.intersect(rect)) {
+                if (Rect.intersects(visibleRect, rect) && !mHasAttachedItems.get(i)) {
                     val child = recycler?.getViewForPosition(i)
                     addView(child, 0)
                     measureChildWithMargins(child!!, 0, 0)
@@ -141,15 +152,11 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
                         rect.right,
                         rect.bottom - mSumDy
                     )
-                } else {
-                    break
+                    child.rotationY -= 1
+                    mHasAttachedItems.put(i, true)
                 }
             }
         }
-
-        mSumDy += travel
-        // 平移容器内的item
-        offsetChildrenVertical(-travel)
         return travel
     }
 

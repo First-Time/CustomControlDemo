@@ -18,6 +18,8 @@ import com.lyf.customcontrol.part3.measurelayout01.MyLinLayoutActivity
 import com.lyf.customcontrol.part3.recyclerreuse07.custom.RecyclerViewCustomActivity
 import com.lyf.customcontrol.part3.recyclerreuse07.official.RecyclerViewOfficialActivity
 import com.lyf.customcontrol.part3.recyclerreuse07.reusecustom.ReuseCustomActivity
+import com.lyf.customcontrol.part3.recyclerreuse08.common.ReuseAnimatorCustomActivity
+import com.lyf.customcontrol.part3.recyclerreuse08.excellent.ReuseAnimatorExcellentActivity
 import com.lyf.customcontrol.part3.recyclerview04.RecyclerViewBaseActivity
 import com.lyf.customcontrol.part3.waterfalllayout03.WaterFallLayoutActivity
 
@@ -135,6 +137,22 @@ class Part3Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             ReuseCustomActivity::class.java
+                        )
+                    )
+                }
+                12 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ReuseAnimatorCustomActivity::class.java
+                        )
+                    )
+                }
+                13 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            ReuseAnimatorExcellentActivity::class.java
                         )
                     )
                 }
