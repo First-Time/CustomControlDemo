@@ -15,6 +15,8 @@ import com.lyf.customcontrol.part3.itemdecoration05.ondraw.OnDrawActivity
 import com.lyf.customcontrol.part3.itemdecoration05.ondrawover.OnDrawOverActivity
 import com.lyf.customcontrol.part3.layoutmanager06.CustomLayoutManagerActivity
 import com.lyf.customcontrol.part3.measurelayout01.MyLinLayoutActivity
+import com.lyf.customcontrol.part3.recyclercoverflow09.normal.CoverFlowActivity
+import com.lyf.customcontrol.part3.recyclercoverflow09.overlay.OverlayFlowActivity
 import com.lyf.customcontrol.part3.recyclerreuse07.custom.RecyclerViewCustomActivity
 import com.lyf.customcontrol.part3.recyclerreuse07.official.RecyclerViewOfficialActivity
 import com.lyf.customcontrol.part3.recyclerreuse07.reusecustom.ReuseCustomActivity
@@ -153,6 +155,22 @@ class Part3Adapter(private var activities: ArrayList<String>) :
                         Intent(
                             holder.tvNameJump.context,
                             ReuseAnimatorExcellentActivity::class.java
+                        )
+                    )
+                }
+                14 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            CoverFlowActivity::class.java
+                        )
+                    )
+                }
+                15 -> {
+                    holder.tvNameJump.context.startActivity(
+                        Intent(
+                            holder.tvNameJump.context,
+                            OverlayFlowActivity::class.java
                         )
                     )
                 }

@@ -1,37 +1,44 @@
-package com.lyf.customcontrol.part3.recyclerreuse07.reusecustom
+package com.lyf.customcontrol.part3.recyclercoverflow09.normal
 
 import android.graphics.Rect
 import android.util.SparseArray
+import android.util.SparseBooleanArray
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.ceil
 import kotlin.math.max
 
 class CustomLayoutManager : RecyclerView.LayoutManager() {
-    private var mSumDy = 0
+    private var mSumDx = 0
     private var mTotalHeight = 0
     private var mItemWidth = 0
     private var mItemHeight = 0
     private val mItemRectArray = SparseArray<Rect>()
+    private val mHasAttachedItems = SparseBooleanArray() //true表示已经在布局中，false表示没有在布局中
 
     override fun onLayoutChildren(recycler: RecyclerView.Recycler?, state: RecyclerView.State?) {
         detachAndScrapAttachedViews(recycler!!)
         if (itemCount == 0) {
             return
         }
+
+        mItemRectArray.clear()
+        mHasAttachedItems.clear()
+
         //将item的位置存储起来
         val childView = recycler?.getViewForPosition(0)
         measureChildWithMargins(childView, 0, 0)
         mItemWidth = getDecoratedMeasuredWidth(childView)
         mItemHeight = getDecoratedMeasuredHeight(childView)
-        val visibleCount = ceil(getVerticalSpace() / mItemHeight.toFloat()).toInt()
+        val visibleCount = ceil(getHorizontalSpace() / mItemWidth.toFloat()).toInt()
 
-        var offsetY = paddingTop //offsetY首先偏移paddingTop的距离
+        var offsetX = paddingStart //offsetX首先偏移paddingStart的距离
 
         for (i in 0 until itemCount) {
             //需要考虑paddingLeft
-            val rect = Rect(paddingLeft, offsetY, mItemWidth + paddingLeft, mItemHeight + offsetY)
+            val rect = Rect(offsetX, paddingTop, offsetX + mItemWidth, mItemHeight + paddingTop)
             mItemRectArray.put(i, rect)
-            offsetY += mItemHeight
+            mHasAttachedItems.put(i, false)
+            offsetX += mItemWidth
         }
 
         for (i in 0 until visibleCount) {
@@ -44,30 +51,30 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
         }
         //如果所有子View的高度和没有填满RecyclerView的高度，
         //则将高度设置为RecyclerView的高度
-        mTotalHeight = max(offsetY, getVerticalSpace())
+        mTotalHeight = max(offsetX, getHorizontalSpace())
     }
 
-    override fun canScrollVertically(): Boolean {
+    override fun canScrollHorizontally(): Boolean {
         return true
     }
 
-    private fun getVerticalSpace(): Int {
-        return height - paddingTop - paddingBottom
+    private fun getHorizontalSpace(): Int {
+        return width - paddingStart - paddingEnd
     }
 
     /**
      * 获取当前屏幕的位置
      */
-    private fun getVisibleArea(travel: Int): Rect {
+    private fun getVisibleArea(): Rect {
         return Rect(
-            paddingLeft,
-            paddingTop + mSumDy + travel,
-            width - paddingRight,
-            getVerticalSpace() + paddingTop + mSumDy + travel //需要加上paddingTop
+            paddingStart + mSumDx,
+            paddingTop,
+            mSumDx + width - paddingEnd,
+            height - paddingBottom
         )
     }
 
-    override fun scrollVerticallyBy(
+    override fun scrollHorizontallyBy(
         dy: Int,
         recycler: RecyclerView.Recycler?,
         state: RecyclerView.State?
@@ -76,80 +83,83 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
 
         var travel = dy
         //如果滑动到最顶部
-        if (mSumDy + dy < 0) {
-            travel = -mSumDy
-        } else if (mSumDy + travel > mTotalHeight - getVerticalSpace()) {
+        if (mSumDx + dy < 0) {
+            travel = -mSumDx
+        } else if (mSumDx + travel > mTotalHeight - getHorizontalSpace()) {
             //如果滑动到最底部
-            travel = mTotalHeight - getVerticalSpace() - mSumDy
+            travel = mTotalHeight - getHorizontalSpace() - mSumDx
         }
 
-        //从下向上滑动时回收越界子View
+        if (travel == 0) return 0
+
+        mSumDx += travel
+
+        val visibleRect = getVisibleArea()
+        //左右滑动时回收越界子View
         for (i in childCount - 1 downTo 0) {
             val child = getChildAt(i)
-            if (travel > 0) { //需要回收当前屏幕，上越界的View
-                if (getDecoratedBottom(child!!) - travel < 0) {
-                    removeAndRecycleView(child, recycler!!)
-                    continue
-                }
-            } else { //需要回收当前屏幕，下越界的View
-                if (getDecoratedTop(child!!) - travel > height - paddingBottom) {
-                    removeAndRecycleView(child, recycler!!)
-                    continue
-                }
+            val position = getPosition(child!!)
+            val rect = mItemRectArray.get(position)
+            if (Rect.intersects(visibleRect, rect)) {
+                layoutDecoratedWithMargins(
+                    child,
+                    rect.left - mSumDx,
+                    rect.top,
+                    rect.right - mSumDx,
+                    rect.bottom
+                )
+                mHasAttachedItems.put(position, true)
+            } else {
+                removeAndRecycleView(child, recycler!!)
+                mHasAttachedItems.put(position, false)
             }
         }
 
-        val visibleRect = getVisibleArea(travel)
+        val lastView = getChildAt(childCount - 1)
+        val firstView = getChildAt(0)
+
         //布局子View阶段
-        if (travel >= 0) {
-            val lastView = getChildAt(childCount - 1)
-            val minPos = getPosition(lastView!!) + 1 //从最后一个View + 1开始吧
+        if (travel > 0) {
+            val minPos = getPosition(firstView!!)
 
             //顺序addChildView
             for (i in minPos until itemCount) {
                 val rect = mItemRectArray.get(i)
-                if (visibleRect.intersect(rect)) {
+                if (Rect.intersects(visibleRect, rect) && !mHasAttachedItems.get(i)) {
                     val child = recycler?.getViewForPosition(i)
                     addView(child)
                     measureChildWithMargins(child!!, 0, 0)
                     layoutDecorated(
                         child!!,
-                        rect.left,
-                        rect.top - mSumDy,
-                        rect.right,
-                        rect.bottom - mSumDy
+                        rect.left - mSumDx,
+                        rect.top,
+                        rect.right - mSumDx,
+                        rect.bottom
                     )
-                } else {
-                    break
+                    mHasAttachedItems.put(i, true)
                 }
             }
-        } else {
-            val firstView = getChildAt(0)
-            val maxPos = getPosition(firstView!!) - 1 //从第一个View + 1开始
+        } else if (travel < 0) {
+            val maxPos = getPosition(lastView!!)
 
             //顺序addChildView
             for (i in maxPos downTo 0) {
                 val rect = mItemRectArray.get(i)
-                if (visibleRect.intersect(rect)) {
+                if (Rect.intersects(visibleRect, rect) && !mHasAttachedItems.get(i)) {
                     val child = recycler?.getViewForPosition(i)
                     addView(child, 0)
                     measureChildWithMargins(child!!, 0, 0)
                     layoutDecorated(
                         child!!,
-                        rect.left,
-                        rect.top - mSumDy,
-                        rect.right,
-                        rect.bottom - mSumDy
+                        rect.left - mSumDx,
+                        rect.top,
+                        rect.right - mSumDx,
+                        rect.bottom
                     )
-                } else {
-                    break
+                    mHasAttachedItems.put(i, true)
                 }
             }
         }
-
-        mSumDy += travel
-        // 平移容器内的item
-        offsetChildrenVertical(-travel)
         return travel
     }
 

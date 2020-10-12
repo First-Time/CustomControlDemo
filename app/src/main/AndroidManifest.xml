@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".part3.recyclerreuse08.excellent.ReuseAnimatorExcellentActivity"></activity>
+        <activity
+            android:name=".part3.recyclercoverflow09.overlay.OverlayFlowActivity"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".part3.recyclercoverflow09.normal.CoverFlowActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".part3.recyclerreuse08.excellent.ReuseAnimatorExcellentActivity" />
         <activity android:name=".part3.recyclerreuse08.common.ReuseAnimatorCustomActivity" />
         <activity android:name=".part3.recyclerreuse07.reusecustom.ReuseCustomActivity" />
         <activity android:name=".part3.recyclerreuse07.custom.RecyclerViewCustomActivity" />

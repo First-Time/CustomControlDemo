@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".part3.recyclercoverflow09.overlay.OverlayFlowActivity">
+
+    <com.lyf.customcontrol.part3.recyclercoverflow09.overlay.RecyclerCoverFlowView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light"
+        android:paddingStart="10dp"
+        android:paddingTop="50dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="100dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

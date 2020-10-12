@@ -1,33 +1,36 @@
-package com.lyf.customcontrol.part3.recyclerreuse08.common
+package com.lyf.customcontrol.part3.recyclercoverflow09.normal
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.lyf.customcontrol.R
 import kotlinx.android.synthetic.main.activity_reuse_animator_custom.*
 
-class ReuseAnimatorCustomActivity : AppCompatActivity() {
+class CoverFlowActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reuse_animator_custom)
+        setContentView(R.layout.activity_cover_flow)
 
         val dataList = getData()
 
         //线性布局
-        val layoutManager = CustomLayoutManager()
+        val layoutManager =
+            CustomLayoutManager()
 
         recyclerView.layoutManager = layoutManager
 
-        val myAdapter = RecyclerViewAdapter(dataList)
+        val myAdapter =
+            CoverFlowAdapter(
+                this,
+                dataList
+            )
         recyclerView.adapter = myAdapter
     }
 
     private fun getData(): ArrayList<String> {
         val list = ArrayList<String>()
-        for (i in 0..50) {
-            list.add("第${i}组")
-            for (j in 1..9) {
-                list.add("第${i}${j}个item")
-            }
+        for (j in 0..100) {
+            list.add("第${j}个item")
         }
         return list
     }

@@ -34,7 +34,9 @@ class Part3Activity : AppCompatActivity() {
             "RecyclerViewCustomActivity",
             "ReuseCustomActivity",
             "ReuseAnimatorCustomActivity",
-            "ReuseAnimatorExcellentActivity"
+            "ReuseAnimatorExcellentActivity",
+            "CoverFlowActivity",
+            "OverlayFlowActivity"
         )
 
         myAdapter = Part3Adapter(itemList)

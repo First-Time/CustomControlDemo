@@ -31,7 +31,7 @@ class CustomLayoutManager : RecyclerView.LayoutManager() {
         mItemHeight = getDecoratedMeasuredHeight(childView)
         val visibleCount = ceil(getVerticalSpace() / mItemHeight.toFloat()).toInt()
 
-        var offsetY = paddingTop //offsetY首先便宜paddingTop的距离
+        var offsetY = paddingTop //offsetY首先偏移paddingTop的距离
 
         for (i in 0 until itemCount) {
             //需要考虑paddingLeft
